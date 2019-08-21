@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wuq-Uo-3fV">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="kbX-QS-zw8">
+            <objects>
+                <viewController id="Wuq-Uo-3fV" customClass="WebViewController" customModule="UI_internalWebVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OHK-nY-QBT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NN-Va-fGW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="z18-Ow-DiD">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" id="08i-Zi-RJL">
+                                            <connections>
+                                                <action selector="finish:" destination="Wuq-Uo-3fV" id="RfX-de-b9u"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJZ-wp-osd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AJZ-wp-osd" firstAttribute="leading" secondItem="OHK-nY-QBT" secondAttribute="leading" id="1Hs-FH-keM"/>
+                            <constraint firstAttribute="bottom" secondItem="AJZ-wp-osd" secondAttribute="bottom" id="5hp-VM-HZi"/>
+                            <constraint firstItem="3NN-Va-fGW" firstAttribute="leading" secondItem="OHK-nY-QBT" secondAttribute="leading" id="IZW-af-5ZN"/>
+                            <constraint firstItem="3NN-Va-fGW" firstAttribute="top" secondItem="omX-my-CmS" secondAttribute="top" id="JGR-YZ-H3F"/>
+                            <constraint firstItem="omX-my-CmS" firstAttribute="trailing" secondItem="3NN-Va-fGW" secondAttribute="trailing" id="JUI-Bw-3yq"/>
+                            <constraint firstItem="AJZ-wp-osd" firstAttribute="top" secondItem="3NN-Va-fGW" secondAttribute="bottom" id="UpE-VQ-VOP"/>
+                            <constraint firstAttribute="trailing" secondItem="AJZ-wp-osd" secondAttribute="trailing" id="Z3V-oy-Bpn"/>
+                            <constraint firstItem="AJZ-wp-osd" firstAttribute="top" secondItem="3NN-Va-fGW" secondAttribute="bottom" id="jdn-tx-T5J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="omX-my-CmS"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="3NN-Va-fGW" id="SvT-4Z-oTF"/>
+                        <outlet property="webView" destination="AJZ-wp-osd" id="SN0-Ur-G3p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w0h-6c-1qa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="-21"/>
+        </scene>
+    </scenes>
+</document>
