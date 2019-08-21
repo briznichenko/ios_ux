@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupLabeledTextView()
+        setupPlainTextField()
     }
 
     func setupLabeledTextView() {
@@ -54,6 +55,27 @@ class ViewController: UIViewController {
         
         // Set how links should appear: blue and underlined
         labeledTextView.linkTextAttributes = [
+            .foregroundColor: UIColor.blue,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
+    }
+    
+    func setupPlainTextField() {
+        let string = plainTextView.text ?? ""
+        let url = URL(string: "https://www.apple.com")!
+        let attributedString = NSMutableAttributedString(string: string)
+        
+        if let range = string.range(of: "lamet") {
+            attributedString.setAttributes([.link: url, .font : UIFont.systemFont(ofSize: 15)], range: NSRange(range, in: string))
+        }
+        
+        plainTextView.attributedText = attributedString
+        plainTextView.isUserInteractionEnabled = true
+        plainTextView.isEditable = false
+        plainTextView.delegate = self
+        
+        // Set how links should appear: blue and underlined
+        plainTextView.linkTextAttributes = [
             .foregroundColor: UIColor.blue,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
